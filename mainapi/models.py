@@ -14,7 +14,7 @@ class Pet(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
 
     class Meta:
-        verbose_name_plural = "addresses"
+        verbose_name_plural = "pets"
 
     def __str__(self):
         return self.name

@@ -2,17 +2,10 @@ from django.shortcuts import render
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from rest_framework.renderers import TemplateHTMLRenderer
 from .models import Pet
-from rest_framework import serializers
-
-from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render,redirect,render_to_response
-from django.template import RequestContext
-from django.contrib.auth import authenticate, login
-
+from django.http import HttpResponse
 from .serializers import PetSerializer
-from django.http import JsonResponse
+
 
 
 
