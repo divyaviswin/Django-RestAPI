@@ -2,9 +2,9 @@ from rest_framework import serializers
 from .models import Pet
 
 
-class PetSerializer(serializers.ModelSerializer):
+class PetSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
        model = Pet
-       fields =('type','name','birthday')
+       fields =('pk','type','name','birthday')
 
