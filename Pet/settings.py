@@ -26,7 +26,7 @@ SECRET_KEY = '(kq@l)02m(dpk-uo3uew$c0cue7*96^c7%_-%tlt)t8fc&7f5q'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+DISABLE_COLLECTSTATIC=1
 
 # Application definition
 
