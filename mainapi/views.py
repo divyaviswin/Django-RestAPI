@@ -1,6 +1,4 @@
-from django.shortcuts import render
-from rest_framework import status
-from rest_framework.response import Response
+
 from .models import Pet
 from .serializers import PetSerializer,UserSerializer
 from django.contrib.auth.models import User
