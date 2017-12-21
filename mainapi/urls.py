@@ -5,10 +5,8 @@ from rest_framework import routers
 
 
 urlpatterns = [
-url(r'^$', views.dashboard, name='dashboard'),
-    url(r'^login/$', auth_views.login, name='login'),
-    url(r'^logout/$', auth_views.logout, name='logout'),
-    url(r'^logout-then-login/$', auth_views.logout_then_login, name='login_then_login'),
-url(r'^pet-list/$', views.pet_list, name='status_list'),
-url(r'^pet-list/(?P<pk>\d+)/$', views.pet_user, name='status_list'),
+    url(r'^pets/$', views.PetList.as_view()),
+    url(r'^pets/(?P<pk>[0-9]+)/$', views.PetDetail.as_view()),
+    url(r'^users/$', views.UserList.as_view()),
+    url(r'^users/(?P<pk>[0-9]+)/$', views.UserDetail.as_view()),
 ]
