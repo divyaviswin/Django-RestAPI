@@ -10,5 +10,5 @@ url(r'^$', views.dashboard, name='dashboard'),
     url(r'^logout/$', auth_views.logout, name='logout'),
     url(r'^logout-then-login/$', auth_views.logout_then_login, name='login_then_login'),
 url(r'^pet-list/$', views.pet_list, name='status_list'),
-url(r'^pet-user/$', views.pet_user, name='status_list'),
+url(r'^pet-list/(?P<pk>\d+)/$', views.pet_user, name='status_list'),
 ]

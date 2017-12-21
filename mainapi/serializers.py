@@ -3,8 +3,8 @@ from .models import Pet
 
 
 class PetSerializer(serializers.HyperlinkedModelSerializer):
-
-    class Meta:
-       model = Pet
-       fields =('pk','type','name','birthday')
+	#user = serializers.CharField(default=serializers.CurrentUserDefault())
+	class Meta:
+		model = Pet
+		fields =('pk','type','name','birthday')
 
