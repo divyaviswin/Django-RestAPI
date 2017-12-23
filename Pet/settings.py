@@ -24,9 +24,9 @@ ALLOWED_HOSTS=['petlisting.herokuapp.com']
 SECRET_KEY = '(kq@l)02m(dpk-uo3uew$c0cue7*96^c7%_-%tlt)t8fc&7f5q'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+
 
 
 # Application definition
@@ -128,5 +128,3 @@ STATICFILES_DIRS = [
 STATIC_ROOT=os.path.join(BASE_DIR, "staticcdn","static_root")
 MEDIA_URL = '/media/'
 MEDIA_ROOT=os.path.join(BASE_DIR, "staticcdn","media_root")
-
-SECURE_PROXY_SSL_HEADER=('HTTP_X_FORWARDED_PROTO','https')
