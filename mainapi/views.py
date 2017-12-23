@@ -25,9 +25,14 @@ class PetList(generics.ListCreateAPIView):
 
 
 class PetDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Pet.objects.all()
+    #queryset = Pet.objects.all()
     serializer_class = PetSerializer
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
+
+    def get_queryset(self):
+        return Pet.objects.filter(owner=self.request.user)
+
+
 
 
 
