@@ -7,7 +7,7 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ('id', 'username', 'user')
+        fields = ('id', 'username','pets',)
 class PetSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
     #user = serializers.CharField(default=serializers.CurrentUserDefault())

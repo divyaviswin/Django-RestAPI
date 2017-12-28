@@ -5,6 +5,7 @@ from . import views
 
 
 urlpatterns = [
+
     url(r'^pets/$', views.PetList.as_view()),
     url(r'^pets/(?P<pk>[0-9]+)/$', views.PetDetail.as_view()),
     url(r'^users/$', views.UserList.as_view()),

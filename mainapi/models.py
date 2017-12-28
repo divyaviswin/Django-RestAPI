@@ -12,7 +12,7 @@ class Pet(models.Model):
     type=models.CharField(max_length=50,choices=PET_TYPES)
     name=models.CharField(max_length=100)
     birthday=models.DateField()
-    owner = models.ForeignKey(User, on_delete=models.CASCADE)
+    owner = models.ForeignKey(User,related_name='pets', on_delete=models.CASCADE)
 
     class Meta:
         verbose_name_plural = "pets"

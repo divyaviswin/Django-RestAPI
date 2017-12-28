@@ -22,7 +22,7 @@ urlpatterns = [
 
     url(r'^admin/', admin.site.urls),
     url(r'^', include('mainapi.urls')),
-    url(r'^api-auth/', include('rest_framework.urls')),
+    url(r'^pets/', include('rest_framework.urls')),
 
 
 ]

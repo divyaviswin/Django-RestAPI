@@ -1,4 +1,4 @@
-
+from django.contrib import messages
 from .models import Pet
 from .serializers import PetSerializer,UserSerializer
 from django.contrib.auth.models import User
@@ -16,13 +16,18 @@ class UserDetail(generics.RetrieveAPIView):
     serializer_class = UserSerializer
 
 class PetList(generics.ListCreateAPIView):
-    queryset = Pet.objects.all()
+    #queryset = Pet.objects.all()
     serializer_class = PetSerializer
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
+    def get_queryset(self):
+    	if self.request.user.is_authenticated() :
+    		return Pet.objects.filter(owner=self.request.user)
+    	else:
+    		return Pet.objects.all()
 
     def perform_create(self, serializer):
-        serializer.save(owner=self.request.user)
-
+    	Pet.objects.filter(owner=self.request.user)
+    	serializer.save(owner=self.request.user)
 
 class PetDetail(generics.RetrieveUpdateDestroyAPIView):
     #queryset = Pet.objects.all()
@@ -30,8 +35,11 @@ class PetDetail(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
 
     def get_queryset(self):
-        return Pet.objects.filter(owner=self.request.user)
-
+    	
+    	if self.request.user.is_authenticated() :
+    		return Pet.objects.filter(owner=self.request.user)
+    	else:
+    		return Pet.objects.all()
 
 
 
